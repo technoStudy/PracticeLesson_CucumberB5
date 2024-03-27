@@ -9,35 +9,42 @@ public class GWD {
 
     private static WebDriver driver;
 
-
+    // WebDriver nesnesini döndüren getDriver() metodu
     public static WebDriver getDriver(){
 
-        if (driver == null) { //1 kez oluştur
+        // Eğer driver henüz oluşturulmadıysa
+        if (driver == null) {
+            // Yeni bir ChromeDriver örneği oluştur
             driver = new ChromeDriver();
+
+            // Pencereyi tam ekran yap
             driver.manage().window().maximize();
+
+            // Sayfa yükleme süresi aşımı için zaman aşımı süresini 20 saniye olarak ayarla
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
 
+        // Oluşturulan veya mevcut olan WebDriver nesnesini döndür
         return driver;
     }
 
-
+    // WebDriver nesnesini sonlandıran quitDriver() metodu
     public static void quitDriver(){
 
-        //test sonucu ekranı bir miktar beklesin diye
+        // Test sonucunu görmek için ekranı 5 saniye beklet
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        //driver kapat
-        if (driver != null){ //driver var ise
+        // Eğer driver mevcutsa
+        if (driver != null){
+            // WebDriver'ı kapat
             driver.quit();
+
+            // driver nesnesini null'a ata
             driver=null;
         }
-
     }
-
-
 }
