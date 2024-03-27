@@ -5,25 +5,21 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.GWD;
 
-public class _01_ZeroBankLoginPage extends Parent{
+public class _01_ZeroBankLoginPage extends Parent {
 
     public _01_ZeroBankLoginPage() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
-    @FindBy(id="user_login")
+    @FindBy(id = "user_login")
     public WebElement username;
 
-    @FindBy(id="user_password")
+    @FindBy(id = "user_password")
     public WebElement password;
 
-    @FindBy(name="submit")
+    @FindBy(name = "submit")
     public WebElement signInButton;
-
 
     @FindBy(css = "[class='icon-user']")
     public WebElement userIcon;
-
-
-
 }

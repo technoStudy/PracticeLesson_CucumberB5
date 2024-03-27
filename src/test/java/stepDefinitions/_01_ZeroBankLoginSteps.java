@@ -10,7 +10,7 @@ import utilities.GWD;
 
 public class _01_ZeroBankLoginSteps {
 
-    _01_ZeroBankLoginPage zbLogin=new _01_ZeroBankLoginPage();
+    _01_ZeroBankLoginPage zbLogin = new _01_ZeroBankLoginPage();
 
     @Given("Navigate to the website")
     public void navigateToTheWebsite() {
@@ -20,7 +20,7 @@ public class _01_ZeroBankLoginSteps {
     @And("Enter username that as {string} and password that as {string}")
     public void enterUsernameThatAsAndPasswordThatAs(String username, String password) {
         zbLogin.mySendKeys(zbLogin.username, username);
-        zbLogin.mySendKeys(zbLogin.password,password);
+        zbLogin.mySendKeys(zbLogin.password, password);
     }
 
     @When("Click login button")
