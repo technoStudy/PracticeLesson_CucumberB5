@@ -1,17 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- Maven proje dosyası -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven proje tanımı -->
+
     <modelVersion>4.0.0</modelVersion>
+    <!-- Maven model versiyonu -->
 
     <groupId>org.example</groupId>
+    <!-- Proje grubu (groupId) -->
+
     <artifactId>PracticeLesson_CucumberB5</artifactId>
+    <!-- Proje kimliği (artifactId) -->
+
     <version>1.0-SNAPSHOT</version>
+    <!-- Proje versiyonu -->
 
     <properties>
+        <!-- Proje özellikleri -->
+
         <maven.compiler.source>11</maven.compiler.source>
+        <!-- Kaynak kodunun derlendiği Java sürümü -->
+
         <maven.compiler.target>11</maven.compiler.target>
+        <!-- Oluşturulan byte kodunun hedeflendiği Java sürümü -->
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Kaynak kodunun karakter kodlaması -->
     </properties>
+
+    <dependencies>
+        <!-- Bağımlılıklar, kütüphaneler -->
+
+        <!-- Selenium bağımlılığı -->
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <!-- Selenium grubu -->
+            <artifactId>selenium-java</artifactId>
+            <!-- Selenium kimliği -->
+            <version>4.18.1</version>
+            <!-- Selenium versiyonu -->
+        </dependency>
+
+        <!-- Cucumber bağımlılığı -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <!-- Cucumber grubu -->
+            <artifactId>cucumber-java</artifactId>
+            <!-- Cucumber kimliği -->
+            <version>7.15.0</version>
+            <!-- Cucumber versiyonu -->
+            <scope>test</scope>
+            <!-- Test kapsamında kullanılacak -->
+        </dependency>
+
+        <!-- TestNG bağımlılığı -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber-TestNG bağımlılığı -->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- SLF4J bağımlılığı -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Commons Lang bağımlılığı -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+    </dependencies>
 
 </project>
