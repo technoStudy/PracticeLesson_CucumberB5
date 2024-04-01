@@ -37,7 +37,7 @@ public class _03_ZBAddNewPayeeSteps {
         }
     }
 
-    @Then("Verify that the transaction was successfully")
-    public void verifyThatTheTransactionWasSuccessfully() {
+    @Then("Verify that the transaction was successful")
+    public void verifyThatTheTransactionWasSuccessful() {
     }
 }

@@ -38,8 +38,7 @@ Feature: New Paye Functionality
     When Click on the element in ZBOnlineBanking
       | addButton |
 
-    Then Verify that the transaction was successfully
-
+    Then Verify that the transaction was successful
 
 
 
