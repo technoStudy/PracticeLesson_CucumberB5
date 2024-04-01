@@ -8,7 +8,7 @@ import utilities.GWD;
 public class _03_ZBOnlineBanking extends Parent {
 
     public _03_ZBOnlineBanking() {
-        PageFactory.initElements(GWD.getDriver(),this);
+        PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(id = "onlineBankingMenu")
@@ -54,6 +54,8 @@ public class _03_ZBOnlineBanking extends Parent {
                 return this.newPayeeAccount;
             case "newPayeeDetails":
                 return this.newPayeeDetails;
+            case "addButton":
+                return this.addButton;
         }
         return null;
     }

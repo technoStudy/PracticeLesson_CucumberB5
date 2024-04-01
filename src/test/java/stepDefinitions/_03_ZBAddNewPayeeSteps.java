@@ -39,5 +39,6 @@ public class _03_ZBAddNewPayeeSteps {
 
     @Then("Verify that the transaction was successful")
     public void verifyThatTheTransactionWasSuccessful() {
+        zbOnlineBanking.verifyContainsText(zbOnlineBanking.successMessage, "successfully created");
     }
 }
