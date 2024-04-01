@@ -2,7 +2,7 @@
 #Username: username
 #Password: password
 
-#Test Case 1: Login Functionality
+# Task : Login Functionality
 #➢ ZeroBank sitesine gidiniz.
 #➢ Username ve password giriniz.
 #➢ Giriş yaptığınızı doğrulayınız
