@@ -12,7 +12,7 @@
 #➢ Add butona tıklayınız
 #➢ İşlemin başarıyla tamamlandığını doğrulayınız.
 
-Feature: New Paye Functionality
+Feature: New Payee Functionality
 
   Background:
     Given Navigate to the website
