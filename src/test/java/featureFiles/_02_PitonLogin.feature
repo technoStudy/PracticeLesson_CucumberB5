@@ -7,12 +7,15 @@
 #               message if authenticate successfully
 #automationtest
 #123456789
-  Feature: Login Module
-    Background:
-Scenario: Test Case 1 - Login Element Control
-  Given Navigate to Piton
-  When  The login form should appear
+Feature: Login Module
 
+  Background:
+
+  Scenario: Test Case 1 - Login Element Control
+    Given Navigate to Piton
+    When  The login form should appear
+
+  @Smoke @Regression
   Scenario: Test Case 2 – User should see validation errors
     Given  Navigate to Piton
     When Click the login button

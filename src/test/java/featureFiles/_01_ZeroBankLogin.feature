@@ -10,6 +10,7 @@
 
 Feature: Login Functionality
 
+  @Smoke
   Scenario: Login with valid username and password
     Given Navigate to the website
     And Enter username that as "username" and password that as "password"

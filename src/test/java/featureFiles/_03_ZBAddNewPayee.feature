@@ -20,16 +20,15 @@ Feature: New Payee Functionality
     When Click login button
     Then Verify that user logged in
 
+  @Regression
   Scenario: Add New Payee
 
     When Click on the element in ZBOnlineBanking
-
       | onlineBankingLink |
       | payBillsLink      |
       | addNewPayeeLink   |
 
     And User sending name, address, account and details in ZBOnlineBanking
-
       | newPayeeName    | Terry Smith  |
       | newPayeeAddress | London       |
       | newPayeeAccount | 1563210      |
