@@ -39,8 +39,3 @@ Feature: New Payee Functionality
       | addButton |
 
     Then Verify that the transaction was successful
-
-
-
-
-
