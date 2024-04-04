@@ -19,3 +19,7 @@ Feature: Login Module
   Scenario: Test Case 2 – User should see validation errors
     Given  Navigate to Piton
     When Click the login button
+    And Validation errors should be displayed
+
+    Scenario: Test Case 3 – Control panel login must be and verified
+      When Enter the username "automationtest" and password "123456789" then clik the login button

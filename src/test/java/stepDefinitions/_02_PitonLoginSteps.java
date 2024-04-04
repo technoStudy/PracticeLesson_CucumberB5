@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
@@ -22,5 +23,17 @@ public class _02_PitonLoginSteps {
     @When("Click the login button")
     public void clickTheLoginButton() {
         plp.myClick(plp.loginButton);
+    }
+
+    @And("Validation errors should be displayed")
+    public void validationErrorsShouldBeDisplayed() {
+
+        plp.verifyContainsText(plp.userNameError,"Username field is required");
+        plp.verifyContainsText(plp.passwordError,"Password field is required");
+
+    }
+
+    @When("Enter the username {string} and password {string} then clik the login button")
+    public void enterTheUsernameAndPasswordThenClikTheLoginButton(String arg0, String arg1) {
     }
 }

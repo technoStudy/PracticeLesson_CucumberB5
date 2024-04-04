@@ -17,5 +17,9 @@ public class _02_PitonLoginPage extends Parent {
     @FindBy(css = "[class='mat-button-wrapper']")
     public WebElement loginButton;
 
+    @FindBy(id = "mat-error-0")
+    public WebElement userNameError;
 
+    @FindBy(id = "mat-error-1")
+    public WebElement passwordError;
 }
