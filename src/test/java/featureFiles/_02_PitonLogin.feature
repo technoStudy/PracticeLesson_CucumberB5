@@ -10,16 +10,27 @@
 Feature: Login Module
 
   Background:
+    Given Navigate to Piton
+
 
   Scenario: Test Case 1 - Login Element Control
-    Given Navigate to Piton
     When  The login form should appear
 
   @Smoke @Regression
   Scenario: Test Case 2 – User should see validation errors
-    Given  Navigate to Piton
     When Click the login button
     And Validation errors should be displayed
 
-    Scenario: Test Case 3 – Control panel login must be and verified
-      When Enter the username "automationtest" and password "123456789" then clik the login button
+  Scenario: Test Case 3 – Control panel login must be and verified
+    When Enter the username "automationtest" and password "123456789" then clik the login button
+
+  Scenario Outline:Test Case 3 – Control panel login
+    When Enter the username and password then clik the login button
+      | <UserName> | <Password> | <ClickButton> |
+
+
+    Examples:
+      | UserName       | Password  | ClickButton |
+      | selam          | sifre123  | loginButton |
+      | Techno         | tt123@    | loginButton |
+      | automationtest | 123456789 | loginButton |
