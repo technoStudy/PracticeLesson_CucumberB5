@@ -2,35 +2,57 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GWD {
 
-    private static WebDriver driver;
+    public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
     // WebDriver nesnesini döndüren getDriver() metodu
     public static WebDriver getDriver() {
 
+        Locale.setDefault(new Locale("EN"));
+        System.setProperty("user.language", "EN");
+
         Logger logger = Logger.getLogger("");
         logger.setLevel(Level.SEVERE);
 
-        // Eğer driver henüz oluşturulmadıysa
-        if (driver == null) {
-            // Yeni bir ChromeDriver örneği oluştur
-            driver = new ChromeDriver();
+        if (threadBrowserName.get() == null) {
+            threadBrowserName.set("chrome");
+        }
+
+        if (threadDriver.get() == null) {
+
+            switch (threadBrowserName.get()) {
+                case "firefox":
+                    threadDriver.set(new FirefoxDriver());
+                    break;
+                case "edge":
+                    threadDriver.set(new EdgeDriver());
+                    break;
+                case "safari":
+                    threadDriver.set(new SafariDriver());
+                    break;
+                default:
+                    threadDriver.set(new ChromeDriver());
+            }
 
             // Pencereyi tam ekran yap
-            driver.manage().window().maximize();
-
+            threadDriver.get().manage().window().maximize();
             // Sayfa yükleme süresi aşımı için zaman aşımı süresini 20 saniye olarak ayarla
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+            threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
 
         // Oluşturulan veya mevcut olan WebDriver nesnesini döndür
-        return driver;
+        return threadDriver.get();
     }
 
     // WebDriver nesnesini sonlandıran quitDriver() metodu
@@ -44,12 +66,14 @@ public class GWD {
         }
 
         // Eğer driver mevcutsa
-        if (driver != null) {
+        if (threadDriver.get() != null) {
             // WebDriver'ı kapat
-            driver.quit();
+            threadDriver.get().quit();
 
-            // driver nesnesini null'a ata
+            WebDriver driver = threadDriver.get();
             driver = null;
+
+            threadDriver.set(driver);
         }
     }
 }

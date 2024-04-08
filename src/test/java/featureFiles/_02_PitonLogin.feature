@@ -16,7 +16,7 @@ Feature: Login Module
   Scenario: Test Case 1 - Login Element Control
     When  The login form should appear
 
-  @Smoke @Regression
+  @Regression
   Scenario: Test Case 2 – User should see validation errors
     When Click the login button
     And Validation errors should be displayed
