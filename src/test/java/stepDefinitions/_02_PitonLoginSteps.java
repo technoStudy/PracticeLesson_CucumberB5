@@ -49,12 +49,13 @@ public class _02_PitonLoginSteps {
 
     @When("Enter the username and password then clik the login button")
     public void enterTheUsernameAndPasswordThenClikTheLoginButton(DataTable elements) {
+
         List<List<String>> Liste = elements.asLists(String.class);
         for (int i = 0; i < Liste.size(); i++) {
-            plp.findAndSendKeys(Liste.get(i).get(0),Liste.get(i).get(1));
+            plp.findAndSendKeys(Liste.get(i).get(0), Liste.get(i).get(1));
             plp.findAndClick(Liste.get(i).get(2));
-
         }
+        //plp.myClick(plp.loginButton);
 
     }
 }

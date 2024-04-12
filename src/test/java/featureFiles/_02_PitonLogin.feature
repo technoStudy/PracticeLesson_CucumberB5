@@ -26,11 +26,13 @@ Feature: Login Module
 
   Scenario Outline:Test Case 3 – Control panel login
     When Enter the username and password then clik the login button
-      | <UserName> | <Password> | <ClickButton> |
+      | <UserName> | <LoginName>    | <ClickButton> |
+      | <Password> | <PasswordName> | <ClickButton> |
+
 
 
     Examples:
-      | UserName       | Password  | ClickButton |
-      | selam          | sifre123  | loginButton |
-      | Techno         | tt123@    | loginButton |
-      | automationtest | 123456789 | loginButton |
+      | UserName | LoginName      | Password | PasswordName | ClickButton |
+      | UserName | Password       | Password | 1qeqwe       | loginButton |
+      | UserName | tt123@         | Password | qweqwe123    | loginButton |
+      | UserName | automationtest | Password | 123456789    | loginButton |
